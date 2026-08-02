@@ -1,140 +1,38 @@
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Container, IconButton, TextField } from '@mui/material'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { z } from 'zod'
 import { GallerySection } from '../../components/GallerySection'
-import { MediaInformationSection } from '../../components/MediaInformationSection'
-import {
-  Card,
-  CardGrid,
-  ContactForm,
-  Copyright,
-  Footer,
-  FooterContent,
-  Header,
-  Hero,
-  Logo,
-  MobileMenuButton,
-  MobileNav,
-  Nav,
-  Section,
-  SectionTitle,
-} from './styles'
-
-const navigation = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Conteúdos', href: '#conteudos' },
-  { label: 'Atuação', href: '#atuacao' },
-  { label: 'Galeria', href: '#galeria' },
-  { label: 'Contato', href: '#contato' },
-]
-
-const contents = [
-  { category: 'Categoria', title: 'Título do primeiro conteúdo', description: 'Resumo do conteúdo em destaque.' },
-  { category: 'Categoria', title: 'Título do segundo conteúdo', description: 'Resumo do conteúdo em destaque.' },
-  { category: 'Categoria', title: 'Título do terceiro conteúdo', description: 'Resumo do conteúdo em destaque.' },
-]
+import { AreasSection, BiographySection, HeroSection, IndicatorsSection, ProjectsSection } from '../../components/LandingSections'
+import { navigation } from './content'
+import { ContactForm, ContactLayout, Copyright, Footer, FooterContent, Header, Logo, MobileMenuButton, MobileNav, Nav } from './styles'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Informe seu nome'),
   email: z.email('Informe um e-mail válido'),
+  message: z.string().min(10, 'Escreva uma mensagem com pelo menos 10 caracteres'),
 })
-
 type ContactData = z.infer<typeof contactSchema>
 
 export function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ContactData>({ resolver: zodResolver(contactSchema) })
+  const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm<ContactData>({ resolver: zodResolver(contactSchema) })
+  const handleContact = (data: ContactData) => { console.info('Contato:', data); reset() }
 
-  const handleContact = (data: ContactData) => {
-    console.info('Contato:', data)
-  }
-
-  return (
-    <>
-      <Header>
-        <Container maxWidth="lg">
-          <div className="header-content">
-            <Logo href="#inicio">Stelio Dener</Logo>
-            <Nav aria-label="Navegação principal">
-              {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
-            </Nav>
-            <MobileMenuButton as={IconButton} aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={isMenuOpen} aria-controls="menu-mobile" onClick={() => setIsMenuOpen((open) => !open)}>
-              {isMenuOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
-            </MobileMenuButton>
-          </div>
-          <MobileNav id="menu-mobile" $open={isMenuOpen} aria-label="Navegação mobile">
-            <div>
-              {navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</a>)}
-            </div>
-          </MobileNav>
-        </Container>
-      </Header>
-
-      <main>
-        <Hero id="inicio">
-          <Container maxWidth="lg">
-            <small>Apresentação</small>
-            <h1>Espaço para a mensagem principal</h1>
-            <p>Este conteúdo será substituído pelas informações definitivas do projeto.</p>
-            <Button href="#conteudos" variant="contained" size="large">Conheça o projeto</Button>
-          </Container>
-        </Hero>
-
-        <Section id="conteudos">
-          <Container maxWidth="lg">
-            <SectionTitle>Conteúdos recentes</SectionTitle>
-            <CardGrid>
-              {contents.map((item) => (
-                <Card key={item.title}>
-                  <small>{item.category}</small>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </Card>
-              ))}
-            </CardGrid>
-          </Container>
-        </Section>
-
-        <Section id="atuacao" $dark>
-          <Container maxWidth="lg">
-            <SectionTitle>Atuação</SectionTitle>
-            <p>Espaço reservado para apresentar áreas de trabalho, projetos ou serviços.</p>
-          </Container>
-        </Section>
-
-        <MediaInformationSection />
-
-        <GallerySection />
-
-        <Section id="contato">
-          <Container maxWidth="lg">
-            <SectionTitle>Vamos conversar</SectionTitle>
-            <ContactForm onSubmit={handleSubmit(handleContact)} noValidate>
-              <TextField label="Nome" error={!!errors.name} helperText={errors.name?.message} {...register('name')} />
-              <TextField label="E-mail" error={!!errors.email} helperText={errors.email?.message} {...register('email')} />
-              <Button type="submit" variant="contained">Enviar</Button>
-            </ContactForm>
-          </Container>
-        </Section>
-      </main>
-
-      <Footer>
-        <Container maxWidth="lg">
-          <FooterContent>
-            <div><h2>Stelio Dener</h2><p>Área reservada para uma breve apresentação institucional.</p></div>
-            <div><strong>Contato</strong><p>Informações serão adicionadas posteriormente.</p></div>
-          </FooterContent>
-          <Copyright>© {new Date().getFullYear()} Stelio Dener.</Copyright>
-        </Container>
-      </Footer>
-    </>
-  )
+  return <>
+    <Header><Container maxWidth="lg"><div className="header-content"><Logo href="#inicio" aria-label="Stélio Dener — início"><strong>STÉLIO</strong><span>DENER</span></Logo><Nav aria-label="Navegação principal">{navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</Nav><MobileMenuButton as={IconButton} aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={isMenuOpen} aria-controls="menu-mobile" onClick={() => setIsMenuOpen(open => !open)}>{isMenuOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}</MobileMenuButton></div><MobileNav id="menu-mobile" $open={isMenuOpen} aria-label="Navegação mobile"><div>{navigation.map(item => <a key={item.href} href={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</a>)}</div></MobileNav></Container></Header>
+    <main>
+      <HeroSection />
+      <IndicatorsSection />
+      <AreasSection />
+      <ProjectsSection />
+      <GallerySection />
+      <BiographySection />
+      <section id="contato"><Container maxWidth="lg"><ContactLayout><div><span>Contato</span><h2>Vamos conversar.</h2><p>Entre em contato para conhecer mais sobre o mandato, enviar sugestões ou acompanhar de perto as ações desenvolvidas em todo o estado de Roraima.</p></div><ContactForm onSubmit={handleSubmit(handleContact)} noValidate><TextField label="Nome" error={!!errors.name} helperText={errors.name?.message} {...register('name')} /><TextField label="E-mail" type="email" error={!!errors.email} helperText={errors.email?.message} {...register('email')} /><TextField label="Mensagem" multiline minRows={4} error={!!errors.message} helperText={errors.message?.message} {...register('message')} /><Button type="submit" variant="contained">Enviar mensagem</Button>{isSubmitSuccessful && <p role="status">Mensagem preparada com sucesso.</p>}</ContactForm></ContactLayout></Container></section>
+    </main>
+    <Footer><Container maxWidth="lg"><FooterContent><div><Logo as="div"><strong>STÉLIO</strong><span>DENER</span></Logo><p>O Defensor do Estado e do Povo. Trabalho que gera resultados e compromisso com Roraima.</p></div><div><strong>Navegação</strong>{navigation.slice(0, 6).map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</div><div><strong>Mandato</strong><p>Cuidando das pessoas.<br />Desenvolvendo o Estado.</p></div></FooterContent><Copyright>© {new Date().getFullYear()} Stélio Dener. Todos os direitos reservados.</Copyright></Container></Footer>
+  </>
 }

@@ -3,9 +3,14 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { margin: 0; min-width: 320px; overflow-x: hidden; }
+body { background: #f7faf8; color: #1f4931; }
 img, svg { max-width: 100%; }
 a { color: inherit; }
 button, input, textarea { font: inherit; }
+
+:focus-visible { outline: 3px solid #befc5f; outline-offset: 3px; }
+
+::selection { background: #befc5f; color: #173f2a; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
