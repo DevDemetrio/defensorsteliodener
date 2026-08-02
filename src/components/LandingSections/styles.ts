@@ -23,11 +23,11 @@ export const HeroContent = styled.div`
   @media(max-width:600px){ padding-top:64px; h1{font-size:clamp(2.5rem,12vw,4rem)} }
 `
 export const HeroActions = styled.div`
-  display:flex; flex-wrap:wrap; gap:14px; margin-top:32px;
+  display:flex; flex-wrap:wrap; gap:14px; margin:32px 0 56px;
   a { min-height:50px; padding-inline:24px; }
   a:first-child { background:#befc5f; color:#173f2a; }
   a:last-child { border-color:rgba(255,255,255,.6); color:#fff; }
-  @media(max-width:480px){ a{width:100%;} }
+  @media(max-width:480px){ margin-bottom:40px; a{width:100%;} }
 `
 export const HeroImage = styled.div`
   display:flex; align-items:end; justify-content:center; min-height:520px;
