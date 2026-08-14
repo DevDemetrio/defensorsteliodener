@@ -5,9 +5,6 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded'
 import { Button } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
-import mobileHeaderBanner from '../../assets/CELULAR.png'
-import desktopHeaderBanner from '../../assets/DESKTOP.png'
-import tabletHeaderBanner from '../../assets/TABLET.png'
 import {
   featuredInvestments,
   featuredProjects,
@@ -25,7 +22,6 @@ import {
   FooterBottom,
   FooterGrid,
   Header,
-  HeaderBanner,
   Hero,
   HeroActions,
   HighlightsBar,
@@ -60,6 +56,7 @@ export function InstitutionalHeader() {
         <MenuButton type="button" aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={isMenuOpen} aria-controls="menu-mobile" onClick={() => setIsMenuOpen(open => !open)}>
           {isMenuOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
         </MenuButton>
+        {/* Banner do header desativado em todos os dispositivos.
         <HeaderBanner href="#inicio" aria-label="Defensor Stélio Dener - início">
           <picture>
             <source media="(max-width: 600px)" srcSet={mobileHeaderBanner} />
@@ -67,6 +64,7 @@ export function InstitutionalHeader() {
             <img src={desktopHeaderBanner} alt="Candidato a Deputado Federal Defensor Stélio Dener, 4477 — Por Roraima, por você!" />
           </picture>
         </HeaderBanner>
+        */}
       </BrandBar>
       <NavigationBar aria-label="Navegação principal">
         <div>{navigation.map(item => <a key={item} href={`#${item.toLowerCase().replace('í', 'i')}`}>{item}</a>)}</div>
