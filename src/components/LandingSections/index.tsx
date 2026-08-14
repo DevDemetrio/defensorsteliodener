@@ -88,7 +88,7 @@ export function BiographySection() {
       <Container maxWidth="lg">
         <Biography>
           <img src={biographyImage} alt="Retrato de Stélio Dener" loading="lazy" />
-          <BiographyContent><SectionHeading><span>Biografia</span><h2>Uma trajetória dedicada à defesa das pessoas.</h2></SectionHeading><p>Stélio Dener é advogado, defensor público e deputado federal por Roraima. Foi Defensor Público-Geral do Estado por quatro mandatos e construiu sua trajetória na defesa dos direitos da população.</p><p>Na Câmara dos Deputados, atua pelo fortalecimento da saúde, infraestrutura, agricultura, desenvolvimento regional, povos indígenas, esporte, cultura e cidadania.</p><Button href="#contato" variant="contained" endIcon={<ArrowForwardRoundedIcon />}>Conheça a trajetória</Button></BiographyContent>
+          <BiographyContent><SectionHeading><span>Biografia</span><h2>Uma trajetória dedicada à defesa das pessoas.</h2></SectionHeading><p>Stélio Dener de Souza Cruz é advogado, defensor público e deputado federal por Roraima. Foi Defensor Público-Geral do Estado por quatro mandatos e construiu sua trajetória na defesa dos direitos da população.</p><p>Na Câmara dos Deputados, atua pelo fortalecimento da saúde, infraestrutura, agricultura, desenvolvimento regional, povos indígenas, esporte, cultura e cidadania.</p><Button href="#contato" variant="contained" endIcon={<ArrowForwardRoundedIcon />}>Conheça a trajetória</Button></BiographyContent>
         </Biography>
       </Container>
     </Section>

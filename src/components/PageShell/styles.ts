@@ -49,15 +49,34 @@ export const Column = styled.div<{ $region:'left'|'center'|'right' }>`
   position:${({$region})=>$region==='center'?'relative':'sticky'};top:0;min-width:0;height:${({$region})=>$region==='center'?'auto':'100dvh'};min-height:0;overflow:${({$region})=>$region==='center'?'visible':'hidden auto'};overscroll-behavior:${({$region})=>$region==='center'?'auto':'contain'};scrollbar-gutter:${({$region})=>$region==='center'?'auto':'stable'};touch-action:pan-y;-webkit-overflow-scrolling:touch;padding:${({$region})=>$region==='center'?'28px':'20px'};border-right:${({$region})=>$region==='right'?'0':`1px solid ${border}`};background:${({$region})=>$region==='center'?'#fff':'#f8fbf9'};
   .column-heading{position:sticky;z-index:3;top:${({$region})=>$region==='center'?'-28px':'-20px'};margin:${({$region})=>$region==='center'?'-28px -28px 24px':'-20px -20px 18px'};padding:14px 20px;border-bottom:3px solid ${limeGreen};background:${green};color:#fff;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(10px)}
   &:focus-visible{outline-offset:-3px}
-  @media(max-width:800px){position:static;order:${({$region})=>$region==='center'?1:$region==='left'?2:3};height:${({$region})=>$region==='center'?'auto':'100dvh'};overflow:${({$region})=>$region==='center'?'visible':'hidden auto'};padding:20px 16px;border-right:0;border-bottom:1px solid ${border};.column-heading{position:${({$region})=>$region==='center'?'static':'sticky'};top:-20px;margin:-20px -16px 20px}}
+  @media(max-width:800px){
+    position:static;
+    order:${({$region})=>$region==='center'?1:$region==='left'?2:3};
+    width:${({$region})=>$region==='center'?'100%':'calc(100% - 40px)'};
+    height:auto;
+    margin:${({$region})=>$region==='center'?'0':'20px'};
+    overflow:visible;
+    overscroll-behavior:auto;
+    scrollbar-gutter:auto;
+    padding:${({$region})=>$region==='center'?'20px 16px':'20px'};
+    border:${({$region})=>$region==='center'?'0':`1px solid ${border}`};
+    border-radius:${({$region})=>$region==='center'?'0':'14px'};
+    .column-heading{
+      position:static;
+      margin:${({$region})=>$region==='center'?'-20px -16px 20px':'-20px -20px 20px'};
+      border-radius:${({$region})=>$region==='center'?'0':'13px 13px 0 0'};
+    }
+  }
 `
 export const MunicipalityList = styled.div`display:grid;gap:8px;`
 export const MunicipalityItem = styled.article`
   display:grid;gap:5px;padding:15px;border:1px solid ${border};border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(31,73,49,.04);span{color:${navy};font-size:.82rem;font-weight:800}strong{color:${green};font-size:.7rem}
+  @media(max-width:800px){padding:18px;span{font-size:1rem}strong{font-size:.82rem}}
 `
 export const AreaList = styled.div`display:grid;gap:10px;`
 export const AreaItem = styled.article`
   display:grid;grid-template-columns:32px 1fr;gap:10px;padding:14px 12px;border-bottom:1px solid ${border};>span{color:${limeGreen};font-size:.72rem;font-weight:900}strong{color:${navy};font-size:.82rem}p{margin:5px 0 0;color:#687971;font-size:.68rem;line-height:1.45}
+  @media(max-width:800px){grid-template-columns:38px 1fr;gap:12px;padding:18px 8px;>span{font-size:.82rem}strong{font-size:1rem}p{font-size:.82rem;line-height:1.55}}
 `
 export const Hero = styled.section`
   position:relative;overflow:hidden;padding:clamp(30px,5vw,60px);border-radius:18px;background:linear-gradient(130deg,${darkGreen},${green});color:#fff;
