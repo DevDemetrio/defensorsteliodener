@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const green = '#076b52'
 const darkGreen = '#004c3c'
 const navy = '#082f4f'
-const yellow = '#f4c514'
+const limeGreen = '#befc5f'
 const border = '#dce6e1'
 
 export const PageFrame = styled.div`min-height:100dvh;background:#edf3f0;color:${navy};`
@@ -23,7 +23,7 @@ export const HeaderBanner = styled.a`
   @media(max-width:600px){img{aspect-ratio:375/140}}
 `
 export const MenuButton = styled.button`
-  display:none;width:42px;height:42px;place-items:center;padding:0;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(8,47,79,.78);color:#fff;cursor:pointer;transition:background .2s ease;&:hover{background:${navy}}&:focus-visible{outline:3px solid ${yellow};outline-offset:2px}
+  display:none;width:42px;height:42px;place-items:center;padding:0;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(8,47,79,.78);color:#fff;cursor:pointer;transition:background .2s ease;&:hover{background:${navy}}&:focus-visible{outline:3px solid ${limeGreen};outline-offset:2px}
   @media(max-width:780px){position:absolute;z-index:2;top:50%;right:12px;display:grid;transform:translateY(-50%)}
 `
 export const NavigationBar = styled.nav`
@@ -47,7 +47,7 @@ export const MainGrid = styled.div`
 `
 export const Column = styled.div<{ $region:'left'|'center'|'right' }>`
   position:${({$region})=>$region==='center'?'relative':'sticky'};top:0;min-width:0;height:${({$region})=>$region==='center'?'auto':'100dvh'};min-height:0;overflow-y:${({$region})=>$region==='center'?'visible':'auto'};overscroll-behavior:contain;scrollbar-gutter:${({$region})=>$region==='center'?'auto':'stable'};padding:${({$region})=>$region==='center'?'28px':'20px'};border-right:${({$region})=>$region==='right'?'0':`1px solid ${border}`};background:${({$region})=>$region==='center'?'#fff':'#f8fbf9'};
-  .column-heading{position:sticky;z-index:3;top:${({$region})=>$region==='center'?'-28px':'-20px'};margin:${({$region})=>$region==='center'?'-28px -28px 24px':'-20px -20px 18px'};padding:14px 20px;border-bottom:3px solid ${yellow};background:${green};color:#fff;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(10px)}
+  .column-heading{position:sticky;z-index:3;top:${({$region})=>$region==='center'?'-28px':'-20px'};margin:${({$region})=>$region==='center'?'-28px -28px 24px':'-20px -20px 18px'};padding:14px 20px;border-bottom:3px solid ${limeGreen};background:${green};color:#fff;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(10px)}
   &:focus-visible{outline-offset:-3px}
   @media(max-width:800px){position:static;order:${({$region})=>$region==='center'?1:$region==='left'?2:3};height:auto;overflow:visible;padding:20px 16px;border-right:0;border-bottom:1px solid ${border};.column-heading{position:static;margin:-20px -16px 20px}}
 `
@@ -57,14 +57,14 @@ export const MunicipalityItem = styled.article`
 `
 export const AreaList = styled.div`display:grid;gap:10px;`
 export const AreaItem = styled.article`
-  display:grid;grid-template-columns:32px 1fr;gap:10px;padding:14px 12px;border-bottom:1px solid ${border};>span{color:${yellow};font-size:.72rem;font-weight:900}strong{color:${navy};font-size:.82rem}p{margin:5px 0 0;color:#687971;font-size:.68rem;line-height:1.45}
+  display:grid;grid-template-columns:32px 1fr;gap:10px;padding:14px 12px;border-bottom:1px solid ${border};>span{color:${limeGreen};font-size:.72rem;font-weight:900}strong{color:${navy};font-size:.82rem}p{margin:5px 0 0;color:#687971;font-size:.68rem;line-height:1.45}
 `
 export const Hero = styled.section`
   position:relative;overflow:hidden;padding:clamp(30px,5vw,60px);border-radius:18px;background:linear-gradient(130deg,${darkGreen},${green});color:#fff;
-  &::after{position:absolute;width:260px;height:260px;right:-110px;top:-130px;border:24px solid rgba(244,197,20,.18);border-radius:50%;content:''}>span{color:${yellow};font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}h1{position:relative;z-index:1;max-width:760px;margin:14px 0 20px;font-size:clamp(2.2rem,4vw,4.4rem);line-height:.98;letter-spacing:-.05em}h1 strong{color:${yellow}}p{max-width:680px;margin:0;color:rgba(255,255,255,.76);font-size:.94rem;line-height:1.65}
+  &::after{position:absolute;width:260px;height:260px;right:-110px;top:-130px;border:24px solid rgba(190,252,95,.18);border-radius:50%;content:''}>span{color:${limeGreen};font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}h1{position:relative;z-index:1;max-width:760px;margin:14px 0 20px;font-size:clamp(2.2rem,4vw,4.4rem);line-height:.98;letter-spacing:-.05em}h1 strong{color:${limeGreen}}p{max-width:680px;margin:0;color:rgba(255,255,255,.76);font-size:.94rem;line-height:1.65}
 `
 export const HeroActions = styled.div`
-  display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;a,button{min-height:46px}button:first-child{background:${yellow};color:${navy}}button:last-child{border-color:rgba(255,255,255,.65);color:#fff}@media(max-width:480px){button{width:100%}}
+  display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;a,button{min-height:46px}button:first-child{background:${limeGreen};color:${navy}}button:last-child{border-color:rgba(255,255,255,.65);color:#fff}@media(max-width:480px){button{width:100%}}
 `
 export const SectionHeading = styled.header`
   margin:54px 0 24px;>span{color:${green};font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}h2{margin:8px 0 12px;color:${navy};font-size:clamp(1.7rem,3vw,2.8rem);line-height:1.08;letter-spacing:-.04em}p{max-width:620px;margin:0;color:#687971;font-size:.85rem;line-height:1.6}
@@ -75,11 +75,11 @@ export const InvestmentCard = styled.article`
 `
 export const ProjectGrid = styled.div`display:grid;gap:12px;padding-bottom:30px;`
 export const ProjectCard = styled.article`
-  display:grid;grid-template-columns:minmax(190px,.75fr) 1.25fr;gap:24px;align-items:center;padding:22px;border-radius:12px;background:${navy};color:#fff;small{color:${yellow};font-size:.72rem;font-weight:900}h3{margin:6px 0 0;font-size:1.08rem}p{margin:0;color:rgba(255,255,255,.7);font-size:.76rem;line-height:1.55}@media(max-width:560px){grid-template-columns:1fr;gap:12px}
+  display:grid;grid-template-columns:minmax(190px,.75fr) 1.25fr;gap:24px;align-items:center;padding:22px;border-radius:12px;background:${navy};color:#fff;small{color:${limeGreen};font-size:.72rem;font-weight:900}h3{margin:6px 0 0;font-size:1.08rem}p{margin:0;color:rgba(255,255,255,.7);font-size:.76rem;line-height:1.55}@media(max-width:560px){grid-template-columns:1fr;gap:12px}
 `
-export const Footer = styled.footer`position:relative;z-index:1;padding:56px max(24px,calc((100vw - 1440px)/2)) 24px;border-top:7px solid ${yellow};background:${darkGreen};color:#fff;`
+export const Footer = styled.footer`position:relative;z-index:1;padding:56px max(24px,calc((100vw - 1440px)/2)) 24px;border-top:7px solid ${limeGreen};background:${darkGreen};color:#fff;`
 export const FooterGrid = styled.div`
-  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:48px;>div{display:grid;align-content:start;gap:14px}strong{color:${yellow};font-size:.9rem}span{max-width:360px;color:rgba(255,255,255,.62);font-size:.78rem;line-height:1.6}@media(max-width:680px){grid-template-columns:1fr;gap:28px;padding-bottom:36px}
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:48px;>div{display:grid;align-content:start;gap:14px}strong{color:${limeGreen};font-size:.9rem}span{max-width:360px;color:rgba(255,255,255,.62);font-size:.78rem;line-height:1.6}@media(max-width:680px){grid-template-columns:1fr;gap:28px;padding-bottom:36px}
 `
 export const FooterBottom = styled.div`
   display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.48);font-size:.7rem;@media(max-width:520px){align-items:flex-start;flex-direction:column;gap:10px}

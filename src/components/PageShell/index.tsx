@@ -55,7 +55,7 @@ export function InstitutionalHeader() {
 
   return (
     <Header>
-      <UtilityBar><span>Deputado Federal por Roraima</span><span>O Defensor do Estado e do Povo</span></UtilityBar>
+      <UtilityBar><span>Deputado Federal por Roraima</span><span>O Defensor não para</span></UtilityBar>
       <BrandBar>
         <MenuButton type="button" aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={isMenuOpen} aria-controls="menu-mobile" onClick={() => setIsMenuOpen(open => !open)}>
           {isMenuOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
