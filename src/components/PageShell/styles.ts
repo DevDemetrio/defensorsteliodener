@@ -18,7 +18,7 @@ export const BrandBar = styled.div`
 export const HeaderBanner = styled.a`
   display:block;width:100%;overflow:hidden;background:${darkGreen};text-decoration:none;
   picture{display:block;width:100%}
-  img{display:block;width:100%;aspect-ratio:1440/400;object-fit:cover}
+  img{display:block;width:100%;height:auto}
   @media(max-width:1024px){img{aspect-ratio:744/220}}
   @media(max-width:600px){img{aspect-ratio:375/140}}
 `
