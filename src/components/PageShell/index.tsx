@@ -5,7 +5,9 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded'
 import { Button } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
-import defenderPhoto from '../../assets/stelio-header.webp'
+import mobileHeaderBanner from '../../assets/CELULAR.png'
+import desktopHeaderBanner from '../../assets/DESKTOP.png'
+import tabletHeaderBanner from '../../assets/TABLET.png'
 import {
   featuredInvestments,
   featuredProjects,
@@ -59,8 +61,11 @@ export function InstitutionalHeader() {
           {isMenuOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
         </MenuButton>
         <HeaderBanner href="#inicio" aria-label="Defensor Stélio Dener - início">
-          <img src={defenderPhoto} alt="Deputado Federal Defensor Stélio Dener" />
-          <div><small>Deputado Federal</small><strong>O Defensor do Estado e do Povo.</strong></div>
+          <picture>
+            <source media="(max-width: 600px)" srcSet={mobileHeaderBanner} />
+            <source media="(max-width: 1024px)" srcSet={tabletHeaderBanner} />
+            <img src={desktopHeaderBanner} alt="Candidato a Deputado Federal Defensor Stélio Dener, 4477 — Por Roraima, por você!" />
+          </picture>
         </HeaderBanner>
       </BrandBar>
       <NavigationBar aria-label="Navegação principal">

@@ -13,15 +13,14 @@ export const UtilityBar = styled.div`
   @media(max-width:640px){justify-content:center;padding-inline:16px;span:first-child{display:none}}
 `
 export const BrandBar = styled.div`
-  position:relative;min-height:300px;border-bottom:1px solid ${border};
-  @media(max-width:640px){min-height:96px}
+  position:relative;border-bottom:1px solid ${border};
 `
 export const HeaderBanner = styled.a`
-  display:grid;grid-template-columns:minmax(260px,30%) 1fr;width:100%;height:300px;overflow:hidden;background:linear-gradient(115deg,${darkGreen},${green});color:#fff;text-decoration:none;
-  img{width:100%;height:100%;object-fit:cover;object-position:center 38%;border-right:5px solid ${yellow}}
-  >div{display:flex;justify-content:center;flex-direction:column;padding:18px clamp(28px,6vw,96px)}small{margin-bottom:8px;color:${yellow};font-size:.65rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}strong{max-width:720px;font-size:clamp(1.35rem,2.8vw,2.35rem);line-height:1.02;letter-spacing:-.035em}
-  @media(max-width:640px){grid-template-columns:92px 1fr;height:96px;>div{padding:10px 14px 10px 54px}small{font-size:.48rem}strong{font-size:.88rem}}
-  @media(max-width:370px){grid-template-columns:62px 1fr;strong{font-size:.78rem}}
+  display:block;width:100%;overflow:hidden;background:${darkGreen};text-decoration:none;
+  picture{display:block;width:100%}
+  img{display:block;width:100%;aspect-ratio:1440/400;object-fit:cover}
+  @media(max-width:1024px){img{aspect-ratio:744/220}}
+  @media(max-width:600px){img{aspect-ratio:375/140}}
 `
 export const MenuButton = styled.button`
   display:none;width:42px;height:42px;place-items:center;padding:0;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(8,47,79,.78);color:#fff;cursor:pointer;transition:background .2s ease;&:hover{background:${navy}}&:focus-visible{outline:3px solid ${yellow};outline-offset:2px}
