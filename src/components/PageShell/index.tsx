@@ -5,6 +5,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded'
 import { Button } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
+import defenderPhoto from '../../assets/stelio-header.webp'
 import {
   featuredInvestments,
   featuredProjects,
@@ -22,6 +23,7 @@ import {
   FooterBottom,
   FooterGrid,
   Header,
+  HeaderBanner,
   Hero,
   HeroActions,
   HighlightsBar,
@@ -56,8 +58,10 @@ export function InstitutionalHeader() {
         <MenuButton type="button" aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={isMenuOpen} aria-controls="menu-mobile" onClick={() => setIsMenuOpen(open => !open)}>
           {isMenuOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
         </MenuButton>
-        <a href="#inicio" className="brand-slot"><small>Deputado Federal</small><strong>DEFENSOR</strong><span>STÉLIO DENER</span></a>
-        <div className="secondary-brand-slot">Compromisso com Roraima</div>
+        <HeaderBanner href="#inicio" aria-label="Defensor Stélio Dener - início">
+          <img src={defenderPhoto} alt="Deputado Federal Defensor Stélio Dener" />
+          <div><small>Deputado Federal</small><strong>O Defensor do Estado e do Povo.</strong></div>
+        </HeaderBanner>
       </BrandBar>
       <NavigationBar aria-label="Navegação principal">
         <div>{navigation.map(item => <a key={item} href={`#${item.toLowerCase().replace('í', 'i')}`}>{item}</a>)}</div>

@@ -13,12 +13,19 @@ export const UtilityBar = styled.div`
   @media(max-width:640px){justify-content:center;padding-inline:16px;span:first-child{display:none}}
 `
 export const BrandBar = styled.div`
-  display:grid;grid-template-columns:1fr minmax(240px,1.4fr) 1fr;min-height:104px;align-items:center;gap:24px;padding:18px max(24px,calc((100vw - 1440px)/2));border-bottom:1px solid ${border};
-  .brand-slot{display:flex;justify-self:center;flex-direction:column;align-items:center;line-height:.9;text-decoration:none}.brand-slot small{margin-bottom:5px;color:${green};font-size:.6rem;font-weight:800;text-transform:uppercase}.brand-slot strong{color:${navy};font-size:1.65rem;font-weight:900;letter-spacing:-.045em}.brand-slot span{color:${green};font-size:.85rem;font-weight:900;letter-spacing:.11em}.secondary-brand-slot{justify-self:end;color:${green};font-size:.76rem;font-weight:800}
-  @media(max-width:640px){grid-template-columns:auto 1fr;min-height:76px;padding:12px 16px;.brand-slot{justify-self:start;align-items:flex-start}.secondary-brand-slot{display:none}}
+  position:relative;min-height:300px;border-bottom:1px solid ${border};
+  @media(max-width:640px){min-height:96px}
+`
+export const HeaderBanner = styled.a`
+  display:grid;grid-template-columns:minmax(260px,30%) 1fr;width:100%;height:300px;overflow:hidden;background:linear-gradient(115deg,${darkGreen},${green});color:#fff;text-decoration:none;
+  img{width:100%;height:100%;object-fit:cover;object-position:center 38%;border-right:5px solid ${yellow}}
+  >div{display:flex;justify-content:center;flex-direction:column;padding:18px clamp(28px,6vw,96px)}small{margin-bottom:8px;color:${yellow};font-size:.65rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}strong{max-width:720px;font-size:clamp(1.35rem,2.8vw,2.35rem);line-height:1.02;letter-spacing:-.035em}
+  @media(max-width:640px){grid-template-columns:92px 1fr;height:96px;>div{padding:10px 14px 10px 54px}small{font-size:.48rem}strong{font-size:.88rem}}
+  @media(max-width:370px){grid-template-columns:62px 1fr;strong{font-size:.78rem}}
 `
 export const MenuButton = styled.button`
-  display:grid;width:44px;height:44px;place-items:center;padding:0;border:0;border-radius:10px;background:transparent;color:${green};cursor:pointer;transition:background .2s ease;&:hover{background:#edf6f1}&:focus-visible{outline:3px solid ${yellow};outline-offset:2px}
+  display:none;width:42px;height:42px;place-items:center;padding:0;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(8,47,79,.78);color:#fff;cursor:pointer;transition:background .2s ease;&:hover{background:${navy}}&:focus-visible{outline:3px solid ${yellow};outline-offset:2px}
+  @media(max-width:780px){position:absolute;z-index:2;top:50%;right:12px;display:grid;transform:translateY(-50%)}
 `
 export const NavigationBar = styled.nav`
   display:flex;min-height:52px;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1440px)/2));border-bottom:1px solid ${border};
@@ -35,15 +42,15 @@ export const HighlightsBar = styled.div`
   @media(max-width:800px){grid-template-columns:repeat(2,1fr);>div{display:none}>div:nth-child(-n+2){display:flex}}
 `
 export const MainGrid = styled.div`
-  display:grid;grid-template-columns:minmax(210px,270px) minmax(480px,1fr) minmax(220px,290px);height:max(540px,calc(100dvh - 272px));width:min(100%,1600px);margin-inline:auto;border-inline:1px solid ${border};background:#fff;
+  display:grid;grid-template-columns:minmax(210px,270px) minmax(480px,1fr) minmax(220px,290px);align-items:start;width:min(100%,1600px);margin-inline:auto;border-inline:1px solid ${border};background:#fff;
   @media(max-width:1050px){grid-template-columns:220px minmax(400px,1fr) 230px}
   @media(max-width:800px){display:flex;height:auto;width:100%;flex-direction:column;border:0}
 `
 export const Column = styled.div<{ $region:'left'|'center'|'right' }>`
-  min-width:0;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:${({$region})=>$region==='center'?'28px':'20px'};border-right:${({$region})=>$region==='right'?'0':`1px solid ${border}`};background:${({$region})=>$region==='center'?'#fff':'#f8fbf9'};
+  position:${({$region})=>$region==='center'?'relative':'sticky'};top:0;min-width:0;height:${({$region})=>$region==='center'?'auto':'100dvh'};min-height:0;overflow-y:${({$region})=>$region==='center'?'visible':'auto'};overscroll-behavior:contain;scrollbar-gutter:${({$region})=>$region==='center'?'auto':'stable'};padding:${({$region})=>$region==='center'?'28px':'20px'};border-right:${({$region})=>$region==='right'?'0':`1px solid ${border}`};background:${({$region})=>$region==='center'?'#fff':'#f8fbf9'};
   .column-heading{position:sticky;z-index:3;top:${({$region})=>$region==='center'?'-28px':'-20px'};margin:${({$region})=>$region==='center'?'-28px -28px 24px':'-20px -20px 18px'};padding:14px 20px;border-bottom:3px solid ${yellow};background:${green};color:#fff;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(10px)}
   &:focus-visible{outline-offset:-3px}
-  @media(max-width:800px){order:${({$region})=>$region==='center'?1:$region==='left'?2:3};overflow:visible;padding:20px 16px;border-right:0;border-bottom:1px solid ${border};.column-heading{position:static;margin:-20px -16px 20px}}
+  @media(max-width:800px){position:static;order:${({$region})=>$region==='center'?1:$region==='left'?2:3};height:auto;overflow:visible;padding:20px 16px;border-right:0;border-bottom:1px solid ${border};.column-heading{position:static;margin:-20px -16px 20px}}
 `
 export const MunicipalityList = styled.div`display:grid;gap:8px;`
 export const MunicipalityItem = styled.article`
