@@ -38,54 +38,18 @@ export const indicators = [
 ]
 
 export const featuredInvestments = [
-  {
-    value: 'R$ 88.296.787,00',
-    title: 'Governo do Estado',
-    description: 'Recursos para infraestrutura, saúde, segurança pública, energia, cultura e desenvolvimento de Roraima.',
-  },
-  {
-    value: 'R$ 73.121.489,24',
-    title: 'Boa Vista',
-    description: 'Investimentos em saúde, quadras poliesportivas, educação infantil, urbanização, cultura e povos indígenas.',
-  },
-  {
-    value: 'R$ 57.820.628,01',
-    title: 'Apoio aos povos indígenas',
-    description: 'Mais de 100 comunidades visitadas e ações em saúde, educação, infraestrutura, cultura e autonomia sustentável.',
-  },
-  {
-    value: 'R$ 37.200.010,00',
-    title: 'Rorainópolis',
-    description: 'Estradas vicinais, pontes, pavimentação, poços artesianos, irrigação, saúde e apoio à produção.',
-  },
-  {
-    value: 'R$ 23.159.845,00',
-    title: 'Mucajaí',
-    description: 'Construção de pontes, recuperação de vicinais, infraestrutura e fortalecimento da atenção primária.',
-  },
-  {
-    value: 'R$ 13.786.110,02',
-    title: 'Novo PAC Saúde',
-    description: 'Novas UBS, teleconsulta, CAPS, unidades odontológicas móveis e renovação da frota do SAMU.',
-  },
+  { value: 'R$ 88.296.787,00', title: 'Governo do Estado', description: 'Recursos para infraestrutura, saúde, segurança pública, energia, cultura e desenvolvimento de Roraima.' },
+  { value: 'R$ 73.121.489,24', title: 'Boa Vista', description: 'Investimentos em saúde, quadras poliesportivas, educação infantil, urbanização, cultura e povos indígenas.' },
+  { value: 'R$ 57.820.628,01', title: 'Apoio aos povos indígenas', description: 'Mais de 100 comunidades visitadas e ações em saúde, educação, infraestrutura, cultura e autonomia sustentável.' },
+  { value: 'R$ 37.200.010,00', title: 'Rorainópolis', description: 'Estradas vicinais, pontes, pavimentação, poços artesianos, irrigação, saúde e apoio à produção.' },
+  { value: 'R$ 23.159.845,00', title: 'Mucajaí', description: 'Construção de pontes, recuperação de vicinais, infraestrutura e fortalecimento da atenção primária.' },
+  { value: 'R$ 13.786.110,02', title: 'Novo PAC Saúde', description: 'Novas UBS, teleconsulta, CAPS, unidades odontológicas móveis e renovação da frota do SAMU.' },
 ]
 
 export const featuredProjects = [
-  {
-    title: 'Carreta dos Direitos',
-    value: 'Quase 20 mil atendimentos',
-    description: 'Documentos, orientação jurídica, direitos sociais e serviços essenciais mais perto das comunidades.',
-  },
-  {
-    title: 'Projeto Mão Amiga',
-    value: '+2.500 pessoas alcançadas',
-    description: 'Ações esportivas em municípios e comunidades de diferentes regiões do estado.',
-  },
-  {
-    title: 'Projeto Evoluindo Vidas',
-    value: '+2.500 pessoas alcançadas',
-    description: 'Esporte, inclusão social e novas oportunidades para crianças, jovens e famílias.',
-  },
+  { title: 'Carreta dos Direitos', value: 'Quase 20 mil atendimentos', description: 'Documentos, orientação jurídica, direitos sociais e serviços essenciais mais perto das comunidades.' },
+  { title: 'Projeto Mão Amiga', value: '+2.500 pessoas alcançadas', description: 'Ações esportivas em municípios e comunidades de diferentes regiões do estado.' },
+  { title: 'Projeto Evoluindo Vidas', value: '+2.500 pessoas alcançadas', description: 'Esporte, inclusão social e novas oportunidades para crianças, jovens e famílias.' },
 ]
 
 export const navigation = ['Início', 'Resultados', 'Municípios', 'Projetos', 'Biografia', 'Contato']
