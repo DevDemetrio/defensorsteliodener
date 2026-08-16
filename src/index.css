@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scrollbar-width: none; -webkit-text-size-adjust: 100%; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 body { margin: 0; min-width: 320px; overflow-x: hidden; }
 body { background: #f7faf8; color: #1f4931; }
 img, svg { max-width: 100%; }
