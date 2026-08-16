@@ -1,3 +1,30 @@
+import biographyDesktop from '../assets/biography/biografia-desktop.webp'
+import biographyMobile from '../assets/biography/biografia-mobile.webp'
+
+export const biography = {
+  name: 'Stélio Dener',
+  introduction: 'Advogado, Defensor Público de carreira e deputado federal por Roraima.',
+  imageDesktop: biographyDesktop,
+  imageMobile: biographyMobile,
+  paragraphs: [
+    'Sou Stélio Dener, advogado, Defensor Público de carreira e deputado federal por Roraima.',
+    'Bacharel em Direito pela Universidade Federal de Roraima (UFRR), sou advogado inscrito na OAB desde 1997. Minha trajetória profissional é marcada pela atuação na defesa de direitos, na Justiça e na cidadania.',
+    'Entre 2001 e 2002, fui Consultor-Geral do Tribunal de Contas de Roraima. Em 2004, ingressei, por concurso público, na Defensoria Pública do Estado de Roraima, instituição que viria a presidir por quatro mandatos.',
+    'Também fui presidente da Associação dos Defensores Públicos do Estado de Roraima (ADPER), entre 2005 e 2007, e exerci dois mandatos como juiz eleitoral no Tribunal Regional Eleitoral de Roraima (TRE-RR), nos períodos de 2008 a 2010 e de 2011 a 2013.',
+    'Na OAB Roraima, fui vice-presidente nos períodos de 2006 a 2009 e de 2009 a 2013, além de ter exercido a presidência interina da instituição em 2010.',
+    'Em 2011, fui o candidato mais votado pela categoria na lista tríplice para o cargo de Defensor Público-Geral. Estive à frente da instituição no biênio 2011-2013, sendo reconduzido para o biênio 2013-2015. Em dezembro de 2016, fui escolhido por unanimidade pelos membros para exercer o cargo de Subdefensor Público-Geral, no biênio 2017-2019.',
+    'Entre 2018 e 2020, fui Conselheiro Federal da Ordem dos Advogados do Brasil. Em 2019, assumi pela terceira vez o cargo de Defensor Público-Geral, para o biênio 2019-2021, sendo reconduzido para um quarto mandato, de 2021 a 2023.',
+    'Em 2022, iniciei minha trajetória política e fui eleito deputado federal por Roraima, pela primeira vez, sendo o quarto mais votado do estado.',
+    'Na Câmara dos Deputados, atuei na criação da Frente Parlamentar do Movimento Junino e participei de diferentes comissões ao longo do mandato.',
+    'Em 2026, sou titular da Comissão Especial sobre Prevenção e Auxílio a Desastres e Calamidades Naturais, da Comissão de Constituição e Justiça e de Cidadania (CCJC) e da Comissão de Cultura. Também sou suplente da Comissão do Esporte e da Comissão da Amazônia e dos Povos Originários e Tradicionais.',
+    'Em 2025, fui titular da Comissão de Constituição e Justiça e de Cidadania, da Comissão de Cultura e da Comissão da Amazônia e dos Povos Originários e Tradicionais. Também fui suplente da Comissão do Esporte e da Comissão da Amazônia e dos Povos Originários e Tradicionais.',
+    'Em 2024, fui titular da Comissão de Cultura, da Comissão de Administração e Serviço Público, da Comissão da Amazônia e dos Povos Originários e Tradicionais e da Comissão de Constituição e Justiça e de Cidadania.',
+    'Em 2023, fui titular da Comissão de Cultura, da Comissão de Administração e Serviço Público e da Comissão da Amazônia e dos Povos Originários e Tradicionais. Também fui suplente da Comissão da Amazônia e dos Povos Originários e Tradicionais e da Comissão de Defesa dos Direitos da Mulher.',
+    'Ao longo do mandato, tenho buscado transformar as demandas de Roraima em ações, investimentos e propostas no Congresso Nacional, mantendo como princípio uma atuação próxima das pessoas e das comunidades.',
+  ],
+  closing: 'Por Roraima. Por Você.',
+}
+
 export const authoredProposals = [
   { id: 'pl-848-2023', code: 'PL 848/2023', keywords: 'Areia e pedra para obras em terras indígenas' },
   { id: 'pl-1688-2023', code: 'PL 1688/2023', keywords: 'Segurança armada e monitoramento nas escolas' },
@@ -121,7 +148,14 @@ export const featuredProjects = [
   { title: 'Movimento Gospel', value: 'R$ 1.200.003,00', description: 'Apoio à cultura e às manifestações locais, alcançando mais de 5 mil pessoas.' },
 ]
 
-export const navigation = ['Início', 'Resultados', 'Municípios', 'Projetos', 'Biografia', 'Contato']
+export const navigation = [
+  { label: 'Início', href: '/' },
+  { label: 'Resultados', href: '/#resultados' },
+  { label: 'Municípios', href: '/#municipios' },
+  { label: 'Projetos', href: '/#projetos' },
+  { label: 'Biografia', href: '/biografia' },
+  { label: 'Contato', href: '/#contato' },
+]
 
 export const magazineUrl = 'https://acrobat.adobe.com/id/urn:aaid:sc:US:18456771-fba2-4db9-b98c-0767a27cbb3c'
 

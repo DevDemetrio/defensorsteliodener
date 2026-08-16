@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { colors } from '../../styles/tokens'
 
 const { border, darkGreen, green, limeGreen, navy } = colors
@@ -9,7 +10,7 @@ export const BrandBar = styled.div`
 
 export const Header = styled.header`position:relative;z-index:2;background:#fff;box-shadow:0 3px 18px rgba(31,73,49,.08);`
 
-export const HeaderBanner = styled.a`
+export const HeaderBanner = styled(Link)`
   display:block;width:100%;overflow:hidden;background:${darkGreen};text-decoration:none;
   picture{display:block;width:100%}
   img{display:block;width:100%;height:auto}
@@ -25,7 +26,7 @@ export const HighlightsBar = styled.div`
 
 export const MenuButton = styled.button`
   display:none;width:42px;height:42px;place-items:center;padding:0;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(31,73,49,.78);color:#fff;cursor:pointer;transition:background .2s ease;&:hover{background:${navy}}&:focus-visible{outline:3px solid ${limeGreen};outline-offset:2px}
-  @media(max-width:780px){position:absolute;z-index:2;top:50%;right:12px;display:grid;transform:translateY(-50%)}
+  @media(max-width:780px){position:absolute;z-index:2;top:calc(50% - 42px);right:12px;display:grid;transform:translateY(-50%)}
 `
 
 export const MobileNavigation = styled.nav<{ $open:boolean }>`

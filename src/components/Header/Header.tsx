@@ -3,6 +3,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import mobileHeaderBanner from '../../assets/CELULAR.png'
 import desktopHeaderBanner from '../../assets/DESKTOP.png'
 import tabletHeaderBanner from '../../assets/TABLET.png'
@@ -19,7 +20,7 @@ export function InstitutionalHeader() {
         <MenuButton type="button" aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={isMenuOpen} aria-controls="menu-mobile" onClick={() => setIsMenuOpen(open => !open)}>
           {isMenuOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
         </MenuButton>
-        <HeaderBanner href="#inicio" aria-label="Defensor Stélio Dener - início">
+        <HeaderBanner to="/" aria-label="Defensor Stélio Dener - início">
           <picture>
             <source media="(max-width: 600px)" srcSet={mobileHeaderBanner} />
             <source media="(max-width: 1024px)" srcSet={tabletHeaderBanner} />
@@ -28,12 +29,12 @@ export function InstitutionalHeader() {
         </HeaderBanner>
       </BrandBar>
       <NavigationBar aria-label="Navegação principal">
-        <div>{navigation.map(item => <a key={item} href={`#${item.toLowerCase().replace('í', 'i')}`}>{item}</a>)}<a href={magazineUrl} target="_blank" rel="noopener noreferrer">Minha Revista</a></div>
+        <div>{navigation.map(item => <Link key={item.label} to={item.href}>{item.label}</Link>)}<a href={magazineUrl} target="_blank" rel="noopener noreferrer">Minha Revista</a></div>
         <SearchRoundedIcon aria-label="Pesquisar" />
       </NavigationBar>
       <MobileNavigation id="menu-mobile" $open={isMenuOpen} aria-label="Navegação mobile">
         <div>
-          {navigation.map(item => <a key={item} href={`#${item.toLowerCase().replace('í', 'i')}`} onClick={() => setIsMenuOpen(false)}>{item}<ArrowForwardRoundedIcon /></a>)}
+          {navigation.map(item => <Link key={item.label} to={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}<ArrowForwardRoundedIcon /></Link>)}
           <a href={magazineUrl} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>Minha Revista<ArrowForwardRoundedIcon /></a>
         </div>
       </MobileNavigation>

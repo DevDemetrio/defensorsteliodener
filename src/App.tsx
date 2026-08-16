@@ -2,5 +2,5 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/Home'
 
 export default function App() {
-  return <Routes><Route path="/" element={<HomePage />} /><Route path="/municipios/:municipalitySlug" element={<HomePage />} /><Route path="*" element={<Navigate to="/" replace />} /></Routes>
+  return <Routes><Route path="/" element={<HomePage />} /><Route path="/biografia" element={<HomePage />} /><Route path="/municipios/:municipalitySlug" element={<HomePage />} /><Route path="*" element={<Navigate to="/" replace />} /></Routes>
 }
