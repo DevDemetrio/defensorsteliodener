@@ -10,5 +10,5 @@ export function HeroSection() {
 
   if (municipality) return <Hero id="inicio"><MunicipalityDetails municipality={municipality} /></Hero>
 
-  return <Hero id="inicio"><span>O Defensor não para</span><h1>Mais de <strong>R$ 367 milhões</strong> destinados para transformar Roraima.</h1><p>Um mandato marcado por investimentos em saúde, infraestrutura, agricultura, esporte, educação, povos indígenas e desenvolvimento dos municípios.</p><NumberCarousel /></Hero>
+  return <Hero id="inicio"><span>O Defensor não para</span><h1>Mais de <strong>R$ 367 milhões</strong> em emendas parlamentares destinados a Roraima.</h1><p>Trabalho que gera resultados. Mais investimentos para quem mais precisa.</p><NumberCarousel /></Hero>
 }

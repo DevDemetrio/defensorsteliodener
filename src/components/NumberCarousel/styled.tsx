@@ -25,8 +25,12 @@ export const CarouselItem = styled(Link)`
   @media(max-width:600px){min-height:160px;border-radius:10px}
 `
 
+export const CarouselPicture = styled.picture`
+  position:absolute;inset:0;display:block;
+`
+
 export const CarouselImage = styled.img`
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;
+  width:100%;height:100%;object-fit:cover;opacity:.38;
 `
 
 export const CarouselContent = styled.div`

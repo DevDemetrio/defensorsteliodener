@@ -2,7 +2,7 @@ import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded'
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import { useEffect, useRef, useState } from 'react'
 import { municipalityCarousel } from '../../mocks'
-import { CarouselButton, CarouselContainer, CarouselContent, CarouselFooter, CarouselImage, CarouselItem, CarouselTrack, CarouselViewport } from './styled'
+import { CarouselButton, CarouselContainer, CarouselContent, CarouselFooter, CarouselImage, CarouselItem, CarouselPicture, CarouselTrack, CarouselViewport } from './styled'
 
 export function NumberCarousel() {
   const viewportRef = useRef<HTMLDivElement>(null)
@@ -30,7 +30,7 @@ export function NumberCarousel() {
       <CarouselButton type="button" onClick={showPrevious} aria-label="Número anterior"><ChevronLeftRoundedIcon /></CarouselButton>
       <CarouselViewport ref={viewportRef}>
         <CarouselTrack>
-          {municipalityCarousel.map(item => <CarouselItem key={item.name} to={`/municipios/${item.slug}`} data-carousel-item><CarouselImage src={item.image} alt={`Ação do mandato em ${item.name}`} /><CarouselContent><span>{item.name}</span><small>Total destinado</small><strong>{item.total}</strong></CarouselContent><CarouselFooter>Clique e saiba mais</CarouselFooter></CarouselItem>)}
+          {municipalityCarousel.map(item => <CarouselItem key={item.name} to={`/municipios/${item.slug}`} data-carousel-item><CarouselPicture><source media="(max-width: 700px)" srcSet={item.imageMobile} /><CarouselImage src={item.imageDesktop} alt={`Ação do mandato em ${item.name}`} loading={item.slug === 'alto-alegre' ? 'eager' : 'lazy'} /></CarouselPicture><CarouselContent><span>{item.name}</span><small>Total destinado</small><strong>{item.total}</strong></CarouselContent><CarouselFooter>Clique e saiba mais</CarouselFooter></CarouselItem>)}
         </CarouselTrack>
       </CarouselViewport>
       <CarouselButton type="button" onClick={showNext} aria-label="Próximo número"><ChevronRightRoundedIcon /></CarouselButton>

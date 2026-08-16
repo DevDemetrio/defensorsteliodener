@@ -1,6 +1,6 @@
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
 import type { MunicipalityCarouselItem } from '../../mocks'
-import { BackLink, DetailContent, DetailImage, DetailLayout, HighlightList } from './styled'
+import { BackLink, DetailContent, DetailImage, DetailLayout, DetailPicture, HighlightList } from './styled'
 
 type MunicipalityDetailsProps = {
   municipality: MunicipalityCarouselItem
@@ -9,7 +9,7 @@ type MunicipalityDetailsProps = {
 export function MunicipalityDetails({ municipality }: MunicipalityDetailsProps) {
   return (
     <DetailLayout>
-      <DetailImage src={municipality.image} alt={`Ação do mandato em ${municipality.name}`} />
+      <DetailPicture><source media="(max-width: 700px)" srcSet={municipality.imageMobile} /><DetailImage src={municipality.imageDesktop} alt={`Ação do mandato em ${municipality.name}`} /></DetailPicture>
       <DetailContent>
         <BackLink to="/"><ArrowBackRoundedIcon /> Voltar</BackLink>
         <span>Investimentos no município</span>

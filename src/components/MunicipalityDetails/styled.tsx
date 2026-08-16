@@ -9,9 +9,14 @@ export const DetailLayout = styled.div`
   @media(max-width:700px){grid-template-columns:1fr;gap:24px}
 `
 
-export const DetailImage = styled.img`
-  width:100%;height:100%;min-height:300px;object-fit:cover;border-radius:14px;
+export const DetailPicture = styled.picture`
+  display:block;width:100%;height:100%;min-height:300px;object-fit:cover;border-radius:14px;
+  overflow:hidden;
   @media(max-width:700px){min-height:190px;max-height:260px}
+`
+
+export const DetailImage = styled.img`
+  display:block;width:100%;height:100%;object-fit:cover;
 `
 
 export const DetailContent = styled.div`
