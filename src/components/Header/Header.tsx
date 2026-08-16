@@ -6,7 +6,7 @@ import { useState } from 'react'
 import mobileHeaderBanner from '../../assets/CELULAR.png'
 import desktopHeaderBanner from '../../assets/DESKTOP.png'
 import tabletHeaderBanner from '../../assets/TABLET.png'
-import { indicators, navigation } from '../../mocks'
+import { indicators, magazineUrl, navigation } from '../../mocks'
 import { BrandBar, Header, HeaderBanner, HighlightsBar, MenuButton, MobileNavigation, NavigationBar, UtilityBar } from './styled'
 
 export function InstitutionalHeader() {
@@ -28,12 +28,13 @@ export function InstitutionalHeader() {
         </HeaderBanner>
       </BrandBar>
       <NavigationBar aria-label="Navegação principal">
-        <div>{navigation.map(item => <a key={item} href={`#${item.toLowerCase().replace('í', 'i')}`}>{item}</a>)}</div>
+        <div>{navigation.map(item => <a key={item} href={`#${item.toLowerCase().replace('í', 'i')}`}>{item}</a>)}<a href={magazineUrl} target="_blank" rel="noopener noreferrer">Minha Revista</a></div>
         <SearchRoundedIcon aria-label="Pesquisar" />
       </NavigationBar>
       <MobileNavigation id="menu-mobile" $open={isMenuOpen} aria-label="Navegação mobile">
         <div>
           {navigation.map(item => <a key={item} href={`#${item.toLowerCase().replace('í', 'i')}`} onClick={() => setIsMenuOpen(false)}>{item}<ArrowForwardRoundedIcon /></a>)}
+          <a href={magazineUrl} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>Minha Revista<ArrowForwardRoundedIcon /></a>
         </div>
       </MobileNavigation>
       <HighlightsBar aria-label="Indicadores do mandato">

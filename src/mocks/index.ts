@@ -53,3 +53,34 @@ export const featuredProjects = [
 ]
 
 export const navigation = ['Início', 'Resultados', 'Municípios', 'Projetos', 'Biografia', 'Contato']
+
+export const magazineUrl = 'https://acrobat.adobe.com/id/urn:aaid:sc:US:18456771-fba2-4db9-b98c-0767a27cbb3c'
+
+export const municipalityCarousel = [
+  { name: 'Alto Alegre', total: 'R$ 45.447.008,00', image: altoAlegreImage },
+  { name: 'Amajari', total: 'R$ 30.101.080,17', image: amajariImage },
+  { name: 'Boa Vista', total: 'R$ 88.058.602,11', image: boaVistaImage },
+  { name: 'Bonfim', total: 'R$ 6.855.000,00', image: bonfimImage },
+  { name: 'Cantá', total: 'R$ 9.717.463,91', image: cantaImage },
+  { name: 'Caracaraí', total: 'R$ 4.667.351,95', image: caracaraiImage },
+  { name: 'Caroebe', total: 'R$ 2.542.780,64', image: caroebeImage },
+  { name: 'Iracema', total: 'R$ 8.376.505,00', image: iracemaImage },
+  { name: 'Mucajaí', total: 'R$ 22.614.845,00', image: mucajaiImage },
+  { name: 'Normandia', total: 'R$ 14.229.085,53', image: normandiaImage },
+  { name: 'Pacaraima', total: 'R$ 19.479.201,91', image: pacaraimaImage },
+  { name: 'Rorainópolis', total: 'R$ 37.196.009,99', image: rorainopolisImage },
+  { name: 'Uiramutã', total: 'R$ 12.509.554,88', image: uiramutaImage },
+]
+import altoAlegreImage from '../assets/municipalities/alto-alegre.jpg'
+import amajariImage from '../assets/municipalities/amajari.jpg'
+import boaVistaImage from '../assets/municipalities/boa-vista.jpg'
+import bonfimImage from '../assets/municipalities/bonfim.jpg'
+import cantaImage from '../assets/municipalities/canta.jpg'
+import caracaraiImage from '../assets/municipalities/caracarai.jpg'
+import caroebeImage from '../assets/municipalities/caroebe.jpg'
+import iracemaImage from '../assets/municipalities/iracema.jpg'
+import mucajaiImage from '../assets/municipalities/mucajai.jpg'
+import normandiaImage from '../assets/municipalities/normandia.jpg'
+import pacaraimaImage from '../assets/municipalities/pacaraima.jpg'
+import rorainopolisImage from '../assets/municipalities/rorainopolis.jpg'
+import uiramutaImage from '../assets/municipalities/uiramuta.jpg'

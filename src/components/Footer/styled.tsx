@@ -10,3 +10,7 @@ export const FooterGrid = styled.div`
 export const FooterBottom = styled.div`
   display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.48);font-size:.7rem;@media(max-width:520px){align-items:flex-start;flex-direction:column;gap:10px}
 `
+
+export const SocialLinks = styled.nav`
+  display:flex;align-items:center;gap:12px;margin-top:6px;a{display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(255,255,255,.28);border-radius:50%;color:#fff;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease}a:hover{border-color:${limeGreen};background:${limeGreen};color:${darkGreen}}svg{font-size:1.35rem}@media(max-width:520px){gap:10px;a{width:40px;height:40px}}
+`
