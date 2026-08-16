@@ -12,8 +12,8 @@ export function MainContent() {
   const { newsId } = useParams()
 
   if (pathname === '/biografia') return <ShellColumn label="Biografia" region="center"><Biography /></ShellColumn>
-  if (newsId) return <ShellColumn label="Notícias" region="center"><NewsDetails newsId={newsId} /></ShellColumn>
-  if (pathname === '/noticias') return <ShellColumn label="Notícias" region="center"><NewsSection /></ShellColumn>
+  if (newsId) return <ShellColumn headingId="news-column-heading" label="Notícias" region="center"><NewsDetails newsId={newsId} /></ShellColumn>
+  if (pathname === '/noticias') return <ShellColumn headingId="news-column-heading" label="Notícias" region="center"><NewsSection /></ShellColumn>
 
   return <ShellColumn label="Mandato em números" region="center"><HeroSection /><InvestmentsSection /><ProjectsSection /></ShellColumn>
 }

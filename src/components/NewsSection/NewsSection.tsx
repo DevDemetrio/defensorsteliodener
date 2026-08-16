@@ -24,7 +24,7 @@ export function NewsSection() {
     <section id="noticias">
       <NewsHeader>
         <span>Notícias</span>
-        <h2>Acompanhe minha caminhada rumo à vitória do povo.</h2>
+        <h2 id="news-list-title">Acompanhe minha caminhada rumo à vitória do povo.</h2>
         <p>Veja as ações, encontros e resultados construídos junto à população de Roraima.</p>
       </NewsHeader>
 
@@ -37,7 +37,7 @@ export function NewsSection() {
                 <td data-label="Item"><strong>{item.id}</strong></td>
                 <td data-label="Ação">{item.action}</td>
                 <td data-label="Título">{item.title}</td>
-                <td><DetailsButton to={`/noticias/${item.id}`} aria-label={`Saiba mais sobre: ${item.title}`}>Saiba +<ArrowForwardRoundedIcon /></DetailsButton></td>
+                <td><DetailsButton to={`/noticias/${item.id}#news-detail-title`} aria-label={`Saiba mais sobre: ${item.title}`}>Saiba +<ArrowForwardRoundedIcon /></DetailsButton></td>
               </tr>
             ))}
           </tbody>

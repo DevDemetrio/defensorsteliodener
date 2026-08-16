@@ -152,7 +152,7 @@ export const navigation = [
   { label: 'Início', href: '/' },
   { label: 'Resultados', href: '/#resultados' },
   { label: 'Projetos', href: '/#projetos' },
-  { label: 'Notícias', href: '/noticias' },
+  { label: 'Notícias', href: '/noticias#news-column-heading' },
   { label: 'Biografia', href: '/biografia' },
   { label: 'Contato', href: '/#contato' },
 ]

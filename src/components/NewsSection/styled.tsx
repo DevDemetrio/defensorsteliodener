@@ -7,7 +7,7 @@ const { border, green, limeGreen, navy } = colors
 export const NewsHeader = styled.header`
   margin: 54px 0 24px;
   > span { color:${green};font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase; }
-  h2 { max-width:760px;margin:8px 0 12px;color:${navy};font-size:clamp(1.7rem,3vw,2.8rem);line-height:1.08;letter-spacing:-.04em; }
+  h2 { max-width:760px;margin:8px 0 12px;scroll-margin-top:54px;color:${navy};font-size:clamp(1.7rem,3vw,2.8rem);line-height:1.08;letter-spacing:-.04em; }
   p { max-width:620px;margin:0;color:#687971;font-size:.85rem;line-height:1.6; }
 `
 
@@ -81,6 +81,11 @@ export const ArticleNavigation = styled.nav`
   display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px;
 `
 
+export const ArticleFooter = styled.footer`
+  max-width:720px;margin:34px auto 0;padding-top:24px;border-top:1px solid ${border};
+  ${ArticleNavigation}{margin-bottom:0}
+`
+
 export const BackLink = styled(Link)`
   display:inline-flex;align-items:center;gap:7px;color:${green};font-size:.76rem;font-weight:900;text-decoration:none;
   svg{width:18px}&:hover{color:${navy}}
@@ -92,7 +97,7 @@ export const HomeLink = styled(BackLink)`
 
 export const DetailHeader = styled.header`
   padding:0;color:${navy};
-  >span{display:inline-block;margin-bottom:8px;color:${green};font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}small{display:block;color:#819087;font-size:.65rem}h1{max-width:760px;margin:16px 0;font-size:clamp(1.75rem,3vw,2rem);line-height:1.12;letter-spacing:-.035em}p{max-width:680px;margin:0;color:#667970;font-size:.92rem;line-height:1.7}
+  >span{display:inline-block;margin-bottom:8px;color:${green};font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}small{display:block;color:#819087;font-size:.65rem}h1{max-width:760px;margin:16px 0;scroll-margin-top:54px;font-size:clamp(1.75rem,3vw,2rem);line-height:1.12;letter-spacing:-.035em}p{max-width:680px;margin:0;color:#667970;font-size:.92rem;line-height:1.7}
 `
 
 export const Pagination = styled.nav`

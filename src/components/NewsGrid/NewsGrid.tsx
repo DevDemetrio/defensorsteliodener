@@ -24,8 +24,11 @@ export function NewsGrid() {
               <GridAction>{news.action}</GridAction>
             </GridImageArea>
             <p>{news.title}</p>
-            <GridCardLink to={`/noticias/${news.id}`} state={{ preserveScroll: true }} aria-label={`Ler notícia: ${news.title}`}>
-              Saiba + <ArrowForwardRoundedIcon />
+            <GridCardLink
+              to={`/noticias/${news.id}#news-detail-title`}
+              aria-label={`Ler notícia: ${news.title}`}
+            >
+              Saiba mais <ArrowForwardRoundedIcon />
             </GridCardLink>
           </GridCard>
         ))}

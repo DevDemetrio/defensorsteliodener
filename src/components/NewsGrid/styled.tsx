@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors } from '../../styles/tokens'
 
-const { border, green, navy } = colors
+const { border, green, limeGreen, navy } = colors
 
 export const GridContainer = styled.section`
   margin-top:48px;
@@ -34,9 +34,10 @@ export const GridAction = styled.span`
 `
 
 export const GridCardLink = styled(Link)`
-  display:inline-flex;align-items:center;align-self:flex-start;gap:5px;margin:auto 18px 18px;color:${green};font-size:.7rem;font-weight:900;text-decoration:none;
+  display:flex;min-height:38px;align-items:center;justify-content:center;gap:5px;margin-top:auto;background:${limeGreen};color:${navy};font-size:.7rem;font-weight:900;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;transition:filter .2s ease;
   svg{width:16px;height:16px}
-  &:hover{color:${navy}}
+  &:hover{filter:brightness(.94)}
+  &:focus-visible{outline:3px solid ${navy};outline-offset:-3px}
 `
 
 export const GridPlaceholder = styled.div`

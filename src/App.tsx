@@ -7,6 +7,12 @@ function ScrollToPageSection() {
 
   useEffect(() => {
     if (!hash) {
+      if (typeof state?.scrollPosition === 'number') {
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => window.scrollTo({ top: state.scrollPosition }))
+        })
+        return
+      }
       if (pathname.startsWith('/municipios/') || state?.preserveScroll) return
       window.scrollTo({ top: 0 })
       return
