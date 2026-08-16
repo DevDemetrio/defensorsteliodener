@@ -30,7 +30,11 @@ export const CarouselImage = styled.img`
 `
 
 export const CarouselContent = styled.div`
-  position:relative;z-index:1;display:grid;width:100%;justify-items:center;gap:2px;padding:24px 24px 18px;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.65);span{margin-bottom:3px;font-size:clamp(1.35rem,3vw,1.8rem);font-weight:800;line-height:1.1}small{color:rgba(255,255,255,.82);font-size:.72rem;font-weight:700;letter-spacing:.08em;line-height:1.1;text-transform:uppercase}strong{color:${limeGreen};font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:800;line-height:1.1}
+  position:relative;z-index:1;display:grid;width:100%;justify-items:center;gap:2px;padding:24px 24px 54px;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.65);span{margin-bottom:3px;font-size:clamp(1.35rem,3vw,1.8rem);font-weight:800;line-height:1.1}small{color:rgba(255,255,255,.82);font-size:.72rem;font-weight:700;letter-spacing:.08em;line-height:1.1;text-transform:uppercase}strong{color:${limeGreen};font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:800;line-height:1.1}
+`
+
+export const CarouselFooter = styled.div`
+  position:absolute;z-index:2;right:0;bottom:0;left:0;display:grid;min-height:36px;place-items:center;background:${limeGreen};color:${navy};font-size:.72rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;
 `
 
 export const CarouselButton = styled.button`
