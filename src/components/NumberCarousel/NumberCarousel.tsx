@@ -30,7 +30,7 @@ export function NumberCarousel() {
       <CarouselButton type="button" onClick={showPrevious} aria-label="Número anterior"><ChevronLeftRoundedIcon /></CarouselButton>
       <CarouselViewport ref={viewportRef}>
         <CarouselTrack>
-          {municipalityCarousel.map(item => <CarouselItem key={item.name} data-carousel-item><CarouselImage src={item.image} alt={`Ação do mandato em ${item.name}`} /><CarouselContent><span>{item.name}</span><small>Total destinado</small><strong>{item.total}</strong></CarouselContent></CarouselItem>)}
+          {municipalityCarousel.map(item => <CarouselItem key={item.name} to={`/municipios/${item.slug}`} data-carousel-item><CarouselImage src={item.image} alt={`Ação do mandato em ${item.name}`} /><CarouselContent><span>{item.name}</span><small>Total destinado</small><strong>{item.total}</strong></CarouselContent></CarouselItem>)}
         </CarouselTrack>
       </CarouselViewport>
       <CarouselButton type="button" onClick={showNext} aria-label="Próximo número"><ChevronRightRoundedIcon /></CarouselButton>

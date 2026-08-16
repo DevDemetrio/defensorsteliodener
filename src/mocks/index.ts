@@ -57,20 +57,22 @@ export const navigation = ['Início', 'Resultados', 'Municípios', 'Projetos', '
 export const magazineUrl = 'https://acrobat.adobe.com/id/urn:aaid:sc:US:18456771-fba2-4db9-b98c-0767a27cbb3c'
 
 export const municipalityCarousel = [
-  { name: 'Alto Alegre', total: 'R$ 45.447.008,00', image: altoAlegreImage },
-  { name: 'Amajari', total: 'R$ 30.101.080,17', image: amajariImage },
-  { name: 'Boa Vista', total: 'R$ 88.058.602,11', image: boaVistaImage },
-  { name: 'Bonfim', total: 'R$ 6.855.000,00', image: bonfimImage },
-  { name: 'Cantá', total: 'R$ 9.717.463,91', image: cantaImage },
-  { name: 'Caracaraí', total: 'R$ 4.667.351,95', image: caracaraiImage },
-  { name: 'Caroebe', total: 'R$ 2.542.780,64', image: caroebeImage },
-  { name: 'Iracema', total: 'R$ 8.376.505,00', image: iracemaImage },
-  { name: 'Mucajaí', total: 'R$ 22.614.845,00', image: mucajaiImage },
-  { name: 'Normandia', total: 'R$ 14.229.085,53', image: normandiaImage },
-  { name: 'Pacaraima', total: 'R$ 19.479.201,91', image: pacaraimaImage },
-  { name: 'Rorainópolis', total: 'R$ 37.196.009,99', image: rorainopolisImage },
-  { name: 'Uiramutã', total: 'R$ 12.509.554,88', image: uiramutaImage },
+  { slug: 'alto-alegre', name: 'Alto Alegre', total: 'R$ 45.447.008,00', image: altoAlegreImage, highlights: ['Saúde e combate à malária e arboviroses', 'Recuperação de estrada vicinal e sistema de irrigação', 'Duplicação da RR-205'] },
+  { slug: 'amajari', name: 'Amajari', total: 'R$ 30.101.080,17', image: amajariImage, highlights: ['Estrada e ponte na Vicinal do Monte Verde', 'Investimentos em saúde e construção de creche', 'Pavimentação urbana e da estrada AMJ-345'] },
+  { slug: 'boa-vista', name: 'Boa Vista', total: 'R$ 88.058.602,11', image: boaVistaImage, highlights: ['Equipamentos, insumos e equipes de saúde', 'Creche, urbanização e quadras esportivas', 'Iluminação do anel viário e vias da capital'] },
+  { slug: 'bonfim', name: 'Bonfim', total: 'R$ 6.855.000,00', image: bonfimImage, highlights: ['Recuperação de vicinais', 'Custeio e manutenção das unidades de saúde', 'Construção de pontes na Vicinal do Wapum'] },
+  { slug: 'canta', name: 'Cantá', total: 'R$ 9.717.463,91', image: cantaImage, highlights: ['Recuperação e pavimentação de estradas vicinais', 'Agricultura e beneficiamento de mandioca', 'Saúde, segurança pública e cultura'] },
+  { slug: 'caracarai', name: 'Caracaraí', total: 'R$ 4.667.351,95', image: caracaraiImage, highlights: ['Recuperação de vicinais no PA Novo Paraíso', 'Custeio da atenção primária de saúde', 'Iluminação do estádio Vital Rodrigues'] },
+  { slug: 'caroebe', name: 'Caroebe', total: 'R$ 2.542.780,64', image: caroebeImage, highlights: ['Tratores e canoas para comunidades indígenas', 'Mudas para plantio e reflorestamento'] },
+  { slug: 'iracema', name: 'Iracema', total: 'R$ 8.376.505,00', image: iracemaImage, highlights: ['Máquinas e implementos agrícolas', 'Pavimentação de vicinais na região do Apuruí', 'Saúde e equipamentos de comunicação'] },
+  { slug: 'mucajai', name: 'Mucajaí', total: 'R$ 22.614.845,00', image: mucajaiImage, highlights: ['Construção de pontes e recuperação de vicinais', 'Fertilizantes e apoio à agricultura familiar', 'Custeio e estrutura da atenção primária de saúde'] },
+  { slug: 'normandia', name: 'Normandia', total: 'R$ 14.229.085,53', image: normandiaImage, highlights: ['Máquinas e veículos para o município', 'Estrutura na Comunidade da Raposa', 'Saúde e pavimentação urbana e rural'] },
+  { slug: 'pacaraima', name: 'Pacaraima', total: 'R$ 19.479.201,91', image: pacaraimaImage, highlights: ['Saúde, ambulância e reforma de unidade básica', 'Creche, quadra e pontes para comunidades', 'Pavimentação e urbanização de vias'] },
+  { slug: 'rorainopolis', name: 'Rorainópolis', total: 'R$ 37.196.009,99', image: rorainopolisImage, highlights: ['Pavimentação e recuperação de estradas vicinais', 'Poços artesianos e sistemas de irrigação', 'Produção de leite, batata-doce e agricultura'] },
+  { slug: 'uiramuta', name: 'Uiramutã', total: 'R$ 12.509.554,88', image: uiramutaImage, highlights: ['Saúde, biblioteca e infraestrutura indígena', 'Quadras e centro esportivo comunitário', 'Energia elétrica e apoio à produção'] },
 ]
+
+export type MunicipalityCarouselItem = (typeof municipalityCarousel)[number]
 import altoAlegreImage from '../assets/municipalities/alto-alegre.jpg'
 import amajariImage from '../assets/municipalities/amajari.jpg'
 import boaVistaImage from '../assets/municipalities/boa-vista.jpg'

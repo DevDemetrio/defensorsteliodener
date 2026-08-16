@@ -1,10 +1,12 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { colors } from '../../styles/tokens'
 
 const { limeGreen, navy } = colors
 
 export const CarouselContainer = styled.div`
   display:grid;grid-template-columns:44px minmax(0,320px) 44px;align-items:center;justify-content:center;gap:12px;width:100%;margin-top:28px;
+  @media(min-width:1025px){grid-template-columns:44px minmax(0,340px) 44px}
   @media(max-width:480px){grid-template-columns:40px minmax(0,1fr) 40px;gap:8px}
 `
 
@@ -16,8 +18,10 @@ export const CarouselTrack = styled.div`
   display:flex;width:100%;
 `
 
-export const CarouselItem = styled.div`
-  position:relative;display:grid;min-height:190px;flex:0 0 100%;overflow:hidden;place-items:center;scroll-snap-align:center;border-radius:12px;background:${navy};color:#fefefe;
+export const CarouselItem = styled(Link)`
+  position:relative;display:grid;min-height:190px;flex:0 0 100%;overflow:hidden;place-items:end center;scroll-snap-align:center;border-radius:12px;background:${navy};color:#fefefe;
+  text-decoration:none;
+  @media(min-width:1025px){min-height:210px}
   @media(max-width:600px){min-height:160px;border-radius:10px}
 `
 
@@ -26,7 +30,7 @@ export const CarouselImage = styled.img`
 `
 
 export const CarouselContent = styled.div`
-  position:relative;z-index:1;display:grid;justify-items:center;gap:6px;padding:24px;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.65);span{font-size:clamp(1.35rem,3vw,1.8rem);font-weight:800}small{color:rgba(255,255,255,.82);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}strong{color:${limeGreen};font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:800}
+  position:relative;z-index:1;display:grid;width:100%;justify-items:center;gap:2px;padding:24px 24px 18px;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.65);span{margin-bottom:3px;font-size:clamp(1.35rem,3vw,1.8rem);font-weight:800;line-height:1.1}small{color:rgba(255,255,255,.82);font-size:.72rem;font-weight:700;letter-spacing:.08em;line-height:1.1;text-transform:uppercase}strong{color:${limeGreen};font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:800;line-height:1.1}
 `
 
 export const CarouselButton = styled.button`
