@@ -19,5 +19,5 @@ function ScrollToPageSection() {
 }
 
 export default function App() {
-  return <><ScrollToPageSection /><Routes><Route path="/" element={<HomePage />} /><Route path="/biografia" element={<HomePage />} /><Route path="/municipios/:municipalitySlug" element={<HomePage />} /><Route path="*" element={<Navigate to="/" replace />} /></Routes></>
+  return <><ScrollToPageSection /><Routes><Route path="/" element={<HomePage />} /><Route path="/biografia" element={<HomePage />} /><Route path="/noticias" element={<HomePage />} /><Route path="/noticias/:newsId" element={<HomePage />} /><Route path="/municipios/:municipalitySlug" element={<HomePage />} /><Route path="*" element={<Navigate to="/" replace />} /></Routes></>
 }
