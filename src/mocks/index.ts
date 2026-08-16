@@ -151,7 +151,6 @@ export const featuredProjects = [
 export const navigation = [
   { label: 'Início', href: '/' },
   { label: 'Resultados', href: '/#resultados' },
-  { label: 'Municípios', href: '/#municipios' },
   { label: 'Projetos', href: '/#projetos' },
   { label: 'Biografia', href: '/biografia' },
   { label: 'Contato', href: '/#contato' },

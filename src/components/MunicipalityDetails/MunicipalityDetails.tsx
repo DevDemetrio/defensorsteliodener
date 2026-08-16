@@ -11,7 +11,7 @@ export function MunicipalityDetails({ municipality }: MunicipalityDetailsProps) 
     <DetailLayout>
       <DetailPicture><source media="(max-width: 700px)" srcSet={municipality.imageMobile} /><DetailImage src={municipality.imageDesktop} alt={`Ação do mandato em ${municipality.name}`} /></DetailPicture>
       <DetailContent>
-        <BackLink to="/"><ArrowBackRoundedIcon /> Voltar</BackLink>
+        <BackLink to="/" state={{ preserveScroll: true }}><ArrowBackRoundedIcon /> Voltar</BackLink>
         <span>Investimentos no município</span>
         <h2>{municipality.name}</h2>
         <small>Total destinado</small>
