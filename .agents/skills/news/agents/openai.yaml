@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notícias Stélio Dener"
+  short_description: "Padroniza e publica notícias do mandato"
+  default_prompt: "Use $news para padronizar e adicionar uma nova notícia ao site."

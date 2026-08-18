@@ -26,7 +26,7 @@ export function NewsDetails({ newsId }: NewsDetailsProps) {
       <DetailHeader><span>{news.action}</span><small>Notícia #{news.id}</small><h1 id="news-detail-title">{news.title}</h1><p>{news.introduction}</p></DetailHeader>
       <ArticlePicture><ArticleImage src={news.imageDesktop} alt={news.imageAlt} /></ArticlePicture>
       <div className="article-content">
-        {news.paragraphs.map((paragraph, index) => <div key={paragraph}><p>{paragraph}</p>{index === 2 && news.quote && <Quote>“{news.quote}”<cite>Defensor Stélio Dener</cite></Quote>}</div>)}
+        {news.paragraphs.map((paragraph, index) => <div key={paragraph}><p>{paragraph}</p>{index === 2 && news.quote && <Quote>“{news.quote}”<cite>{news.quoteAuthor}</cite></Quote>}</div>)}
         {news.service && <ServiceBox><strong>Serviço</strong>{news.service.map(item => <span key={item}>{item}</span>)}</ServiceBox>}
       </div>
       <ArticleFooter><NewsNavigation /></ArticleFooter>
