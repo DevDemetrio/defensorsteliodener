@@ -47,6 +47,7 @@ Produzir notícias consistentes com o conteúdo, o schema, as rotas e a apresent
 ## Integração
 
 - Definir `id` como string numérica sequencial, sem zeros à esquerda: `1`, `2`, `3`.
+- Manter `newsNewestFirst` ordenado pelo maior ID e paginar essa coleção na tabela e no grid, garantindo que a notícia mais recente apareça primeiro.
 - Manter o schema `NewsItem`; não criar campos sem necessidade real de interface.
 - Criar nomes de arquivos descritivos em kebab-case e imports coerentes.
 - Manter até quatro notícias por página no `NewsGrid`; novos itens devem aparecer automaticamente pelo mock.

@@ -2,16 +2,16 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded'
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded'
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import { useState } from 'react'
-import { newsMock } from '../../mocks/newsMock'
+import { newsNewestFirst } from '../../mocks/newsMock'
 import { Grid, GridAction, GridCard, GridCardLink, GridContainer, GridImage, GridImageArea, GridPagination, GridPaginationButton, GridPlaceholder } from './styled'
 
 const MAX_NEWS_ITEMS = 4
 
 export function NewsGrid() {
   const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = Math.max(1, Math.ceil(newsMock.length / MAX_NEWS_ITEMS))
+  const totalPages = Math.max(1, Math.ceil(newsNewestFirst.length / MAX_NEWS_ITEMS))
   const firstItemIndex = (currentPage - 1) * MAX_NEWS_ITEMS
-  const newsItems = newsMock.slice(firstItemIndex, firstItemIndex + MAX_NEWS_ITEMS)
+  const newsItems = newsNewestFirst.slice(firstItemIndex, firstItemIndex + MAX_NEWS_ITEMS)
   const placeholders = Array.from({ length: MAX_NEWS_ITEMS - newsItems.length }, (_, index) => newsItems.length + index + 1)
 
   return (

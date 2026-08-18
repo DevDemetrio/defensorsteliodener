@@ -23,6 +23,7 @@ export type NewsItem = {
 ## Finalidade dos campos
 
 - `id`: número sequencial em string, também usado na rota `/noticias/:newsId`.
+- `newsNewestFirst`: coleção derivada do mock em ordem decrescente de ID; tabela e grid devem paginá-la somente depois da ordenação.
 - `action`: rótulo curto da ação exibido na tabela, na notícia e sobre a imagem do grid. Usar cerca de duas a seis palavras, incluindo local quando útil.
 - `title`: manchete factual e específica; destacar resultado, quantidade, ação ou local.
 - `introduction`: resumo autônomo de uma frase, adequado à listagem e ao detalhe.
@@ -106,5 +107,6 @@ Usar a primeira notícia do `newsMock` como referência de tom e estrutura:
 - Citação e serviço foram omitidos quando não fornecidos.
 - Toda citação possui autoria confirmada em `quoteAuthor`.
 - ID e rota são únicos.
+- A notícia com maior ID aparece primeiro na tabela, no grid e na primeira página da paginação.
 - Imagens existem nos caminhos importados e não distorcem o assunto.
 - `pnpm build` e `pnpm lint` terminam sem erro.

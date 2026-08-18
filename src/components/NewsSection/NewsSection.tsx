@@ -2,7 +2,7 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded'
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded'
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import { useState } from 'react'
-import { newsMock } from '../../mocks/newsMock'
+import { newsNewestFirst } from '../../mocks/newsMock'
 import {
   DetailsButton,
   NewsHeader,
@@ -16,9 +16,9 @@ const ITEMS_PER_PAGE = 2
 
 export function NewsSection() {
   const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = Math.ceil(newsMock.length / ITEMS_PER_PAGE)
+  const totalPages = Math.ceil(newsNewestFirst.length / ITEMS_PER_PAGE)
   const firstItemIndex = (currentPage - 1) * ITEMS_PER_PAGE
-  const visibleNews = newsMock.slice(firstItemIndex, firstItemIndex + ITEMS_PER_PAGE)
+  const visibleNews = newsNewestFirst.slice(firstItemIndex, firstItemIndex + ITEMS_PER_PAGE)
 
   return (
     <section id="noticias">

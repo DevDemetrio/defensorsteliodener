@@ -56,3 +56,5 @@ export const newsMock: NewsItem[] = [
     quoteAuthor: 'Catarina Guerra',
   },
 ]
+
+export const newsNewestFirst = [...newsMock].sort((first, second) => Number(second.id) - Number(first.id))
